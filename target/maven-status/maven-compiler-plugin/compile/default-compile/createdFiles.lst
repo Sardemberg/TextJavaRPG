@@ -1,0 +1,6 @@
+com\mycompany\rpg\RPG.class
+player\Jogador.class
+player\Personagem.class
+player\Humano.class
+player\Anao.class
+player\Elfo.class
