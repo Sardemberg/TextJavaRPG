@@ -10,5 +10,5 @@ package enemies;
  */
 public interface Enemy {
     public int atacar();
-    public int defender();
+    public void defender(int dano);
 }

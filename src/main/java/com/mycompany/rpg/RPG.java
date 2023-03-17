@@ -5,6 +5,11 @@
 
 package com.mycompany.rpg;
 
+import enemies.Enemy;
+import enemies.Goblin;
+import enemies.EnemiesGroup;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import player.Anao;
 import player.Elfo;
@@ -18,8 +23,8 @@ import player.Jogador;
 public class RPG {
 
     public static void main(String[] args) {
-        Jogador jogador = selecionar_personagem();
-        jogador.atacar();
+        EnemiesGroup grupog = new EnemiesGroup(summonEnemies("Goblin", 20));
+        grupog.atacar();
     }
     
     public static Jogador selecionar_personagem(){
@@ -50,5 +55,20 @@ public class RPG {
         }
         
         return null;
+    }
+    
+    public static List<Enemy> summonEnemies(String type, int quantity){
+        List<Enemy> enemies = new ArrayList<>();
+        
+        switch(type){
+            case "Goblin" -> {
+                for(int i = 0; i < quantity; i++){
+                    Enemy goblin = new Goblin();
+                    enemies.add(goblin);
+                }
+            }
+        }
+        
+        return enemies;
     }
 }

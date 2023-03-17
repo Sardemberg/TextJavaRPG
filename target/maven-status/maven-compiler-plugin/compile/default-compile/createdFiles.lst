@@ -1,6 +1,12 @@
+enemies\Goblin.class
+dices\Row20.class
+enemies\GoblinsGroup.class
+player\Personagem.class
+player\Anao.class
+teste.class
 com\mycompany\rpg\RPG.class
 player\Jogador.class
-player\Personagem.class
+dices\Row10.class
 player\Humano.class
-player\Anao.class
+enemies\Enemy.class
 player\Elfo.class
