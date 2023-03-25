@@ -6,19 +6,19 @@ package enemies;
 
 /**
  *
- * @author Aluno
+ * @author sardemberg
  */
-public class Goblin implements Enemy{
-    private int vida = 25;
+public class Trol implements Enemy{
+    private int vida = 35;
 
     @Override
     public int atacar() {
-        return 2;
+        return 5;
     }
 
     @Override
     public void defender(int dano) {
-        this.vida -= (dano - 2);
+        this.vida -= (dano - 5);
     }
 
     @Override

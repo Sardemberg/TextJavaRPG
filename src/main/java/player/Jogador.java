@@ -10,8 +10,8 @@ package player;
  */
 public class Jogador {
     private int vida = 100;
-    private int ataque;
-    private int defesa;
+    private Object arma;
+    private Object armadura;
     private Personagem personagem;
     private String nome;
     
@@ -22,5 +22,13 @@ public class Jogador {
     
     public void atacar(){
         System.out.println(this.personagem.atacar(60));
+    }
+    
+    public void setArma(Object arma){
+        this.arma = arma;
+    }
+    
+    public void setArmadura(Object armadura){
+        this.armadura = armadura;
     }
 }
