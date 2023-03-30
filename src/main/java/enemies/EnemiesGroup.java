@@ -12,14 +12,14 @@ import java.util.List;
  * @author Aluno
  */
 public class EnemiesGroup {
-    private List<Enemy> enemies = new ArrayList<>();
+    private List<Enemy> enemies;
     
     public EnemiesGroup(List<Enemy> enemies){
         this.enemies = enemies;
     }
     
-    public void addGoblin(Goblin goblin){
-        enemies.add(goblin);
+    public void addEnemy(Enemy enemy){
+        enemies.add(enemy);
     }
     
     public int atacar(){
