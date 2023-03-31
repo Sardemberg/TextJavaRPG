@@ -9,17 +9,12 @@ package armors;
  * @author Aluno
  */
 public class CopperArmor extends AbstractArmor{
-    
     public CopperArmor(Armor armor){
-    
-        super.concrete_armor = armor;
-    
+        super(armor);
     } 
     
     @Override
     public int getDefense() {
         return super.concrete_armor.getDefense() + 7;
     }
-  
-    
 }

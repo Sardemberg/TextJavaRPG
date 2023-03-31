@@ -6,23 +6,25 @@ package enemies;
 
 /**
  *
- * @author sardemberg
+ * @author gabie
  */
-public class Trol implements Enemy{
-    private int vida = 35;
-
+public class Dragao implements Enemy{
+    
+    private int vida = 50;
+    
     @Override
     public int atacar() {
-        return 8;
+        return 24;
     }
 
     @Override
     public void defender(int dano) {
-        this.vida -= (dano - 5);
+        this.vida -= (dano - 8);
     }
 
     @Override
     public boolean isDead() {
         return vida <= 0;
     }
+    
 }
