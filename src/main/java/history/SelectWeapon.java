@@ -62,19 +62,19 @@ public class SelectWeapon implements HistoryStep {
         switch (baseWeapon.getClass().getSimpleName()) {
             case "BasicAx":
                 System.out.println("Você recebeu um machado especial!");
-                System.out.println("Seu dado adicional é de: " + String.valueOf(
+                System.out.println("Seu dano adicional é de: " + String.valueOf(
                         new SpecialAx(baseWeapon).getDamage()- baseWeapon.getDamage())
                 );
                 return new SpecialAx(baseWeapon);
             case "BasicBow":
                 System.out.println("Você recebeu um arco especial!");
-                System.out.println("Seu dado adicional é de: " + String.valueOf(
+                System.out.println("Seu dano adicional é de: " + String.valueOf(
                         new SpecialBow(baseWeapon).getDamage()- baseWeapon.getDamage())
                 );
                 return new SpecialBow(baseWeapon);
             case "BasicSword":
                 System.out.println("Você recebeu uma espada especial!");
-                System.out.println("Seu dado adicional é de: " + String.valueOf(
+                System.out.println("Seu dano adicional é de: " + String.valueOf(
                         new SpecialSword(baseWeapon).getDamage()- baseWeapon.getDamage())
                 );
                 return new SpecialSword(baseWeapon);

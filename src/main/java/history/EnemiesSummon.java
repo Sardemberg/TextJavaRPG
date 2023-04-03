@@ -7,6 +7,8 @@ package history;
 import enemies.*;
 import java.util.ArrayList;
 import java.util.List;
+import dices.Row10;
+import java.util.HashMap;
 
 /**
  *
@@ -16,9 +18,11 @@ public class EnemiesSummon implements HistoryStep{
 
     @Override
     public Object execute() {
-        System.out.println("Se prepare, você está prestes a lutar contra um grupo de trols");
-        
-        EnemiesGroup enemies = new EnemiesGroup(summonEnemies("Trol", 4));
+        String enemy_type = chooseEnemiesType();
+        System.out.println("Se prepare, você está prestes a lutar contra um grupo de " + enemy_type);
+        System.out.println();
+        EnemiesGroup enemies = new EnemiesGroup(summonEnemies(enemy_type, 4), enemy_type);
+        System.out.println(enemies.getEnemiesDescription(enemy_type));
         
         return enemies;
     }
@@ -32,13 +36,33 @@ public class EnemiesSummon implements HistoryStep{
                     Enemy goblin = new Goblin();
                     enemies.add(goblin);
                 }
+                break;
             case "Trol":
                 for (int i = 0; i < quantity; i++){
                     Enemy Trol = new Trol();
                     enemies.add(Trol);
                 }
+                break;
+            case "BigBatOfVindar":
+                for (int i = 0; i < quantity; i++){
+                    Enemy bigBatOfVindar = new BigBatOfVindar();
+                    enemies.add(bigBatOfVindar);
+                }
+                break;
         }
 
         return enemies;
+    }
+
+    private String chooseEnemiesType() {
+        int result = Row10.sortear();
+
+        if (result <= 3) {
+            return "Trol";
+        } else if (result <= 7) {
+            return "Goblin";
+        } else {
+            return "BigBatOfVindar";
+        }
     }
 }
