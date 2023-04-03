@@ -9,9 +9,6 @@ package armors;
  * @author Aluno
  */
 public interface Armor {
-    
-    public int getDefense(); 
-    
-    
-    
+    public int getDefense();  
+    public int damage_decrement();
 }

@@ -8,7 +8,8 @@ package armors;
  *
  * @author Aluno
  */
-public class CopperArmor extends AbstractArmor{
+public class CopperArmor extends PlayerArmor{
+    
     public CopperArmor(Armor armor){
         super(armor);
     } 
@@ -16,5 +17,10 @@ public class CopperArmor extends AbstractArmor{
     @Override
     public int getDefense() {
         return super.concrete_armor.getDefense() + 7;
+    }
+
+    @Override
+    public int damage_decrement() {
+        return super.concrete_armor.damage_decrement() + 2;
     }
 }

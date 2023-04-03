@@ -14,6 +14,11 @@ public class BasicArmor implements Armor {
     public int getDefense() {
         return 2;
     }
+
+    @Override
+    public int damage_decrement() {
+        return 0;
+    }
     
     
 }

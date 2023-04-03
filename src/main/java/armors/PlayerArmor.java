@@ -5,16 +5,18 @@
 package armors;
 
 
-public  abstract class AbstractArmor implements Armor{
+public  abstract class PlayerArmor implements Armor{
      
     protected Armor concrete_armor;
     
-    public AbstractArmor(Armor armor){
+    public PlayerArmor(Armor armor){
         this.concrete_armor = armor;
-    
     }  
 
     @Override
     public abstract int getDefense();
-    
+
+    public int damage_decrement(){
+        return 0;
+    }
 }

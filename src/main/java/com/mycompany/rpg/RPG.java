@@ -7,9 +7,8 @@ package com.mycompany.rpg;
 import history.*;
 import player.*;
 import weapons.Weapon;
-import weapons.axes.BasicAx;
-import weapons.bows.BasicBow;
-import weapons.swords.BasicSword;
+import armors.Armor;
+import enemies.EnemiesGroup;
 
 /**
  *
@@ -20,18 +19,43 @@ public class RPG {
         // Introdução
         HistoryContext context = new HistoryContext(new Introduction());
         String nome = (String) context.executeStep();
-        
+
+        System.out.println("--------------------------------------------------------------------------------------");
+        System.out.println();
+
         // Escolha do tipo de personagem
         context.setStep(new ChoosePlayer());
         Personagem tipo = (Personagem) context.executeStep();
         Jogador jogador = new Jogador(nome, tipo);
-        
+
+        System.out.println("--------------------------------------------------------------------------------------");
+        System.out.println();
+
         // Escolha da arma
         context.setStep(new SelectWeapon());
         Weapon weapon = (Weapon) context.executeStep();
         jogador.setArma(weapon);
+
+        System.out.println("--------------------------------------------------------------------------------------");
+        System.out.println();
+
+        // Escolha do tipo de armadura
+        context.setStep(new ChooseArmor());
+        Armor player_armor = (Armor) context.executeStep();
+        jogador.setArmadura(player_armor);
+
+        System.out.println("--------------------------------------------------------------------------------------");
+        System.out.println();
         
-        // Batalha com um grupo de inimigos
+        // Invocação dos inimigos
         context.setStep(new EnemiesSummon());
+        EnemiesGroup enemies = (EnemiesGroup) context.executeStep();
+
+        System.out.println("--------------------------------------------------------------------------------------");
+        System.out.println();
+
+        // Batalha com os inimigos
+        context.setStep(new EfectiveBattle(enemies, jogador));
+        context.executeStep();
     }
 }
