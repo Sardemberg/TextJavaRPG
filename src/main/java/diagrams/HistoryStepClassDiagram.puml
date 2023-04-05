@@ -1,0 +1,37 @@
+@startuml
+interface HistoryStep {
+  + execute(): void
+}
+
+class ChoosePlayer implements HistoryStep {
+  + execute(): void
+}
+
+class ChooseArmor implements HistoryStep {
+  + execute(): void
+}
+
+class EffectiveBattle implements HistoryStep {
+  + execute(): void
+}
+
+class EnemiesSummon implements HistoryStep {
+  + execute(): void
+}
+
+class Introduction implements HistoryStep {
+  + execute(): void
+}
+
+class SelectWeapon implements HistoryStep {
+  + execute(): void
+}
+
+class HistoryContext {
+  - HistoryStep step
+  + initialize(step: HistoryStep): void
+  + executeStep(): void
+  + setStep(step: HistoryStep): void
+}
+HistoryContext --> HistoryStep
+@enduml

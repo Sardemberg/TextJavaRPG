@@ -1,0 +1,39 @@
+@startuml
+interface Personagem {
+  +atacar(): int
+  +defender(): void
+}
+
+class Anao implements Personagem {
+  +atacar(): int
+  +defender(): void
+}
+
+class Humano implements Personagem {
+  +atacar(): int
+  +defender(): void
+}
+
+class Elfo implements Personagem {
+  +atacar(): int
+  +defender(): void
+}
+
+class Jogador {
+  -nome: String
+  -tipoPersonagem: Personagem
+  -vida: int
+  -arma: Weapon
+  -armadura: Armor
+  +Jogador(tipo: Personagem, nome: String): void
+  +attack(): int
+  +defender(damage: int): void
+  +isDead(): boolean
+  +setArma(arma: Weapon): void
+  +setArmadura(armadura: Armor): void
+  +getNome(): String
+}
+
+Jogador --> Personagem
+
+@enduml

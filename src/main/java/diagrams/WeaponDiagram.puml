@@ -1,0 +1,40 @@
+@startuml
+
+interface Weapon {
+  + getDamage(): int
+}
+
+class BasicAx implements Weapon {
+  + getDamage(): int
+}
+
+class BasicBow implements Weapon {
+  + getDamage(): int
+}
+
+class BasicSword implements Weapon {
+  + getDamage(): int
+}
+
+class WeaponDecorator implements Weapon {
+  - weapon: Weapon
+  + WeaponDecorator(weapon: Weapon)
+  + getDamage(): int
+}
+
+class SpecialAx extends WeaponDecorator {
+  + SpecialAx(weapon: Weapon)
+  + getDamage(): int
+}
+
+class SpecialBow extends WeaponDecorator {
+  + SpecialBow(weapon: Weapon)
+  + getDamage(): int
+}
+
+class SpecialSword extends WeaponDecorator {
+  + SpecialSword(weapon: Weapon)
+  + getDamage(): int
+}
+
+@enduml

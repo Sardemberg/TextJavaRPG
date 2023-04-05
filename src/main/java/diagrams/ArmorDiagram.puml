@@ -1,0 +1,35 @@
+@startuml
+
+interface Armor {
+  +getDefense(): int
+  +damage_decrement(): int
+}
+
+class BasicArmor implements Armor{
+  +getDefense(): int
+  +damage_decrement(): int
+}
+
+abstract class PlayerArmor implements Armor{
+  -armor: BasicArmor
+  +PlayerArmor(armor: BasicArmor)
+  +getDefense(): int
+  +damage_decrement(): int
+}
+
+class CooperArmor extends PlayerArmor {
+  +getDefense(): int
+  +damage_decrement(): int
+}
+
+class IronArmor extends PlayerArmor {
+  +getDefense(): int
+  +damage_decrement(): int
+}
+
+class SteelArmor extends PlayerArmor {
+  +getDefense(): int
+  +damage_decrement(): int
+}
+
+@enduml

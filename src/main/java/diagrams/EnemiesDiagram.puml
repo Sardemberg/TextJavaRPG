@@ -1,0 +1,44 @@
+@startuml
+interface Enemy {
+  + atacar(): int
+  + defender(): void
+  + isDead(): boolean
+}
+
+class Goblin implements Enemy {
+  + atacar(): int
+  + defender(): void
+  + isDead(): boolean
+}
+
+class Dragao implements Enemy {
+  + atacar(): int
+  + defender(): void
+  + isDead(): boolean
+}
+
+class BigBatOfVindar implements Enemy {
+  + atacar(): int
+  + defender(): void
+  + isDead(): boolean
+}
+
+class Trol implements Enemy {
+  + atacar(): int
+  + defender(): void
+  + isDead(): boolean
+}
+
+class EnemiesGroup {
+  - List<Enemy> enemies
+  - String enemy_type
+  + EnemiesGroup(List<Enemy> enemies, String enemy_type)
+  + addEnemy(Enemy enemy): void
+  + atacar(): int
+  + getEnemyDescription(String enemy_type): String
+  + isDead(): boolean
+  + defender(): void
+  + getEnemyType(): String
+}
+EnemiesGroup --> Enemy
+@enduml
